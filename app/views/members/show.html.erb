@@ -1,0 +1,20 @@
+<% title "Member" %>
+
+<p>
+  <strong>First Name:</strong>
+  <%= @member.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @member.last_name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @member.email %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_member_path(@member) %> |
+  <%= link_to "Destroy", @member, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", members_path %>
+</p>

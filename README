@@ -1,0 +1,14 @@
+Band notifier is a simple app used to manage gigs for music bands. 
+You can track gigs by date, and even notify band members by e-mail if you wish
+
+Installation:
+
+git clone git://github.com/babinho/Band-notifier.git
+cd Band-notifier
+bundle install
+rails s
+
+
+That should be it, if someone wants to add something else to the readme, fork and make a pull request.
+
+This application is a rewrite of a similar application i wrote in asp.net mvc.

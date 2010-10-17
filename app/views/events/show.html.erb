@@ -1,0 +1,28 @@
+<% title "Svirka" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+<p>
+  <strong>Event Date:</strong>
+  <%= @event.event_date %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @event.price %>
+</p>
+<p>
+  <strong>Currency:</strong>
+  <%= @event.currency %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", events_path %>
+</p>

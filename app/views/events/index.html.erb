@@ -1,0 +1,29 @@
+<% title "Svirke" %>
+
+<table>
+  <tr>
+    <th>Naziv</th>
+    <th>Opis</th>
+    <th>Datum</th>
+    <th>Cijena</th>
+    <th>Valuta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for event in @events %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= event.description %></td>
+      <td><%= event.event_date %></td>
+      <td><%= event.price %></td>
+      <td><%= event.currency %></td>
+      <td><%= link_to "Show", event %></td>
+      <td><%= link_to "Edit", edit_event_path(event) %></td>
+      <td><%= link_to "Destroy", event, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Notify", events_notify_path(event), :confirm => 'Are you sure?' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Event", new_event_path %></p>
