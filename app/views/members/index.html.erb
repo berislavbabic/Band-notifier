@@ -14,9 +14,9 @@
       <td><%= member.first_name %></td>
       <td><%= member.last_name %></td>
       <td><%= member.email %></td>
-      <td><%= link_to "Show", member %></td>
-      <td><%= link_to "Edit", edit_member_path(member) %></td>
-      <td><%= link_to "Destroy", member, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Detalji", member %></td>
+      <td><%= link_to "Uredi", edit_member_path(member) %></td>
+      <td><%= link_to "Obriši", member, :confirm => 'Jeste li sigurni?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

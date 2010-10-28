@@ -18,12 +18,12 @@
       <td><%= event.event_date %></td>
       <td><%= event.price %></td>
       <td><%= event.currency %></td>
-      <td><%= link_to "Show", event %></td>
-      <td><%= link_to "Edit", edit_event_path(event) %></td>
-      <td><%= link_to "Destroy", event, :confirm => 'Are you sure?', :method => :delete %></td>
-      <td><%= link_to "Notify", events_notify_path(event), :confirm => 'Are you sure?' %></td>
+      <td><%= link_to "Detalji", event %></td>
+      <td><%= link_to "Uredi", edit_event_path(event) %></td>
+      <td><%= link_to "Obriši", event, :confirm => 'Jeste li sigurni?', :method => :delete %></td>
+      <td><%= link_to "Pošalji mail", events_notify_path(event), :confirm => 'Jeste li sigurni?' %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Event", new_event_path %></p>
+<p><%= link_to "Nova svirka", new_event_path %></p>
