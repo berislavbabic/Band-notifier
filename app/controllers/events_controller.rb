@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all(:order => 'event_date')
+    @events = Event.paginate(:page => params[:page], :order => 'event_date')
   end
   def upcoming_events
-    @events = Event.find(:all, :conditions => ["event_date >= ?",Time.now], :order => 'event_date' )
+    @events = Event.paginate(:conditions => ["event_date >= ?",Time.now], :order => 'event_date', :page => params[:page])
     render :action => 'index'
   end
 
