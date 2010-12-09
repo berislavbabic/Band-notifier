@@ -15,6 +15,8 @@ namespace :db do
       event.name = Faker::Lorem.words(3)
       event.description = Faker::Lorem.sentences(2)
       event.event_date = 45.days.ago+rand(90).days
+      event.price = (500..2000)
+      event.currency = ["KN", "E", "KM"]
     end
   end
 end
