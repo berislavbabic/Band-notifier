@@ -1,7 +1,20 @@
 <div id="header">
   <div id="title">
-    <h1><%= link_to "Band Notifier", root_path, :class => "title_link" %></h1>
+  <h1><% if current_user %>
+        <%= link_to "Band Notifier", upcoming_path, :class => "title_link" %>
+    <% else %>
+        <%= link_to "Band Notifier", root_path, :class => "title_link" %>
+    <% end %>  
+  </h1>
   </div>
   <div id="logindisplay">
-    <a href="#">Login</a>  </div>
-  <div id="menucontainer">    <ul id="menu">    <li><%= link_to "Nove Svirke", root_path %></li>    <li><%= link_to "Sve Svirke", events_path %></li>    <li><%= link_to "Članovi", members_path %></li>      <li><a href="#">Novi user</a></li>    </ul>  </div></div>
+    <%= render 'layouts/user' %>   </div>
+  <div id="menucontainer">    <ul id="menu">
+    <% if current_user %>        <li><%= link_to "Nove Svirke", upcoming_path %></li>        <li><%= link_to "Sve Svirke", events_path %></li>        <li><%= link_to "Članovi", members_path %></li>
+        <% if current_user.admin? %>          <li><%= link_to "Useri", users_path %></li>
+        <% end %>
+    <% else %>
+    <li><%= link_to "Naslovna", "/public/index" %></li>
+    <li><%= link_to "Info", "/public/about" %></li>
+    <% end %>
+            </ul>  </div></div>

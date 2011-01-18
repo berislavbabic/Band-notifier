@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_filter :require_user
   def index
     @members = Member.all
   end
