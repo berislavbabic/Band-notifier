@@ -1,0 +1,15 @@
+<div class="toolbar">
+<h1>Login page</h1>
+</div>
+<body class="landscape">
+<% form_for :user_session, @user_session, :url => { :action => "create" } do |f| %>
+  <%= f.error_messages %>
+<ul class="edit rounded">
+<li><%= f.text_field :username %></li><br />
+<li><%= f.password_field :password %></li><br />
+</ul>
+    <%= f.submit "Login", :class => "whiteButton" %>
+
+
+<% end %>
+</body>

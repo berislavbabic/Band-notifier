@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
   def upcoming_events
     @events = Event.paginate(:conditions => ["event_date >= ?",Time.now], :order => 'event_date', :page => params[:page])
-    render :action => 'index'
+    render :action => 'index'    
   end
 
   def show
