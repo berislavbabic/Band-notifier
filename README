@@ -6,8 +6,11 @@ Installation:
 git clone git://github.com/babinho/Band-notifier.git
 cd Band-notifier
 bundle install
+rake db:migrate
+Set the configuration values for your mail in config/initializers/setup_mail.rb
 rails s
 
+Big thanx to bobfly for adding mobile views.
 
 That should be it, if someone wants to add something else to the readme, fork and make a pull request.
 

@@ -1,0 +1,10 @@
+<% title "Events" %>
+
+<ul>
+  <% for event in @events %>
+        <li class="arrow">
+          <%= link_to h(event.name), event %>
+          <small class="counter"><%= "#{event.event_date}" %> </small>
+        </li>
+  <% end %>
+</ul>

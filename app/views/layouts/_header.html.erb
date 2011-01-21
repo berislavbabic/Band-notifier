@@ -1,20 +1,1 @@
-<div id="header">
-  <div id="title">
-  <h1><% if current_user %>
-        <%= link_to "Band Notifier", upcoming_path, :class => "title_link" %>
-    <% else %>
-        <%= link_to "Band Notifier", root_path, :class => "title_link" %>
-    <% end %>  
-  </h1>
-  </div>
-  <div id="logindisplay">
-    <%= render 'layouts/user' %>   </div>
-  <div id="menucontainer">    <ul id="menu">
-    <% if current_user %>        <li><%= link_to "Nove Svirke", upcoming_path %></li>        <li><%= link_to "Sve Svirke", events_path %></li>        <li><%= link_to "Članovi", members_path %></li>
-        <% if current_user.admin? %>          <li><%= link_to "Useri", users_path %></li>
-        <% end %>
-    <% else %>
-    <li><%= link_to "Naslovna", "/public/index" %></li>
-    <li><%= link_to "Info", "/public/about" %></li>
-    <% end %>
-            </ul>  </div></div>
+<div id="header">  <div id="title">  <h1><% if current_user %>        <%= link_to "Band Notifier", upcoming_path, :class => "title_link" %>    <% else %>        <%= link_to "Band Notifier", root_path, :class => "title_link" %>    <% end %>    </h1>  </div>  <div id="logindisplay">    <%= render 'layouts/user' %>   </div>  <div id="menucontainer">    <p>    <% if mobile_device? %>        <%= link_to "Full Site", :mobile => 0 %>    <% else %>        <%= link_to "Mobile", :mobile => 1 %>    <% end %>    </p>    <ul id="menu">    <% if current_user %>        <li><%= link_to "Nove Svirke", upcoming_path %></li>        <li><%= link_to "Sve Svirke", events_path %></li>        <li><%= link_to "Članovi", members_path %></li>        <% if current_user.admin? %>          <li><%= link_to "Useri", users_path %></li>        <% end %>    <% else %>    <li><%= link_to "Naslovna", "/public/index" %></li>    <li><%= link_to "Info", "/public/about" %></li>    <% end %>            </ul>  </div></div>
