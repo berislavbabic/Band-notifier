@@ -2,8 +2,11 @@
 
 <ul>
   <% for event in @events %>
+        <li>
+          Naziv:
+        </li>
         <li class="arrow">
-          <%= link_to h(event.name), event %>
+          <%= link_to event.name, event %>
           <small class="counter"><%= "#{event.event_date}" %> </small>
         </li>
   <% end %>
