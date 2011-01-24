@@ -1,9 +1,9 @@
-<% title "Events" %>
+<% title t('activerecord.models.events.plural') %>
 
 <ul>
   <% for event in @events %>
         <li>
-          Naziv:
+        <%= t('activerecord.models.events.title') %> 
         </li>
         <li class="arrow">
           <%= link_to event.name, event %>

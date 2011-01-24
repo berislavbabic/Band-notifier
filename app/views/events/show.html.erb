@@ -1,28 +1,28 @@
-<% title "Svirka" %>
+<% title t('activerecord.models.events.singular') %>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('activerecord.models.events.title') %>:</strong>
   <%= @event.name %>
 </p>
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('activerecord.models.events.description') %>:</strong>
   <%= @event.description %>
 </p>
 <p>
-  <strong>Event Date:</strong>
+  <strong><%= t('common.date') %>:</strong>
   <%= @event.event_date %>
 </p>
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('activerecord.models.events.price') %>:</strong>
   <%= @event.price %>
 </p>
 <p>
-  <strong>Currency:</strong>
+  <strong><%= t('activerecord.models.events.price') %>:</strong>
   <%= @event.currency %>
 </p>
 
 <p>
-  <%= link_to "Uredi", edit_event_path(@event) %> |
-  <%= link_to "Obriši", @event, :confirm => 'Jeste li sigurni?', :method => :delete %> |
-  <%= link_to "Popis svirki", events_path %>
+  <%= link_to t('common.edit'), edit_event_path(@event) %> |
+  <%= link_to t('common.delete'), @event, :confirm => t('common.confirmation'), :method => :delete %> |
+  <%= link_to t('activerecord.models.events.list'), events_path %>
 </p>

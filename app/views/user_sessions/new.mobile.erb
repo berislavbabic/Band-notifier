@@ -1,16 +1,16 @@
 <div class="toolbar">
-<h1>Login page</h1>
+<h1><%= t('activerecord.models.user_sessions.login') %></h1>
 </div>
 <body class="landscape">
 <%= form_for :user_session, :url => { :action => "create" } do |f| %>
   <%= f.error_messages %>
 <ul class="edit rounded">
-<li>User Name:</li>
+  <li><%= t('activerecord.models.users.username') %></li>
 <li><%= f.text_field :username %></li><br />
-<li>Password:</li>
+<li><%= t('activerecord.models.users.password') %></li>
 <li><%= f.password_field :password %></li><br />
 </ul>
-    <%= f.submit "Login", :class => "whiteButton right" %>
+<%= f.submit t('activerecord.models.user_sessions.login'), :class => "whiteButton right" %>
 
 
 <% end %>

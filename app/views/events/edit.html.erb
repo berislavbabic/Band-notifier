@@ -1,8 +1,8 @@
-<% title "Uredi Svirku" %>
+<% title t('activerecord.models.events.edit_event') %>
 
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Detalji", @event %> |
-  <%= link_to "Popis svirki", events_path %>
+  <%= link_to t('common.details'), @event %> |
+  <%= link_to t('activerecord.models.events.list'), events_path %>
 </p>

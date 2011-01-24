@@ -1,24 +1,24 @@
 <%= form_for @event do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= t('activerecord.models.events.title') %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= t('activerecord.models.events.description') %><br />
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :event_date %><br />
+    <%= t('common.date') %><br />
     <%= f.date_select :event_date %>
   </p>
   <p>
-    <%= f.label :price %><br />
+    <%= t('activerecord.models.events.price') %><br />
     <%= f.text_field :price %>
   </p>
   <p>
-    <%= f.label :currency %><br />
+    <%= t('activerecord.models.events.currency') %><br />
     <%= f.text_field :currency %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit t('common.submit') %></p>
 <% end %>

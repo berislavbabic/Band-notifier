@@ -1,26 +1,26 @@
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :username %><br />
+    <%= t('activerecord.models.users.username') %><br />
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= t('common.email') %><br />
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <%= t('activerecord.models.users.password') %><br />
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation %><br />
+    <%= t('activerecord.models.users.password_confirmation') %><br />
     <%= f.password_field :password_confirmation %>
   </p>
   <% if current_user.admin? %>
     <p>
-    <%= f.label :admin %>
+    <%= t('activerecord.models.users.admin') %>
     <%= f.check_box :admin %>
     </p>
   <% end %>
-  <p><%= f.submit "Submit" %></p>
+  <p><%= f.submit t('common.submit') %></p>
 <% end %>

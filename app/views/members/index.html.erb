@@ -1,10 +1,10 @@
-<% title "Članovi" %>
+<% title t('activerecord.models.members.plural') %>
 
 <table>
   <tr>
-    <th>Ime</th>
-    <th>Prezime</th>
-    <th>Email</th>
+  <th><%= t('activerecord.models.members.first_name') %></th>
+    <th><%= t('activerecord.models.members.last_name') %></th>
+    <th><%= t('common.email') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +14,11 @@
       <td><%= member.first_name %></td>
       <td><%= member.last_name %></td>
       <td><%= member.email %></td>
-      <td><%= link_to "Detalji", member %></td>
-      <td><%= link_to "Uredi", edit_member_path(member) %></td>
-      <td><%= link_to "Obriši", member, :confirm => 'Jeste li sigurni?', :method => :delete %></td>
+      <td><%= link_to t('common.details'), member %></td>
+      <td><%= link_to t('common.edit'), edit_member_path(member) %></td>
+      <td><%= link_to t('common.delete'), member, :confirm => t('common.confirmation'), :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "Novi Član", new_member_path %></p>
+<p><%= link_to t('activerecord.models.members.new_member'), new_member_path %></p>

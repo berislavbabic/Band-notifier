@@ -1,10 +1,10 @@
-<% title "Users"%>
+<% title t('activerecord.models.users.plural') %>
 
 <table>
   <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Admin</th>
+    <th><%= t('activerecord.models.users.username')%></th>
+    <th><%= t('activerecord.models.users.username')%></th>
+    <th><%= t('activerecord.models.users.admin')%></th>
     <th></th>
     <th></th>
   </tr>
@@ -13,9 +13,9 @@
     <td><%= user.username %></td>
     <td><%= user.email %></td>
     <td><%= user.admin %></td>
-    <td><%= link_to "Edit", edit_user_path(user.id) %></td>
-    <td><%= link_to "Delete", user, :confirm => 'Jeste li sigurni?', :method => :delete %></td>
+    <td><%= link_to t('common.edit'), edit_user_path(user.id) %></td>
+    <td><%= link_to t('common.delete'), user, :confirm => t('common.confirmation'), :method => :delete %></td>
   </tr>
   <% end %>
 </table>
-<%= link_to "Novi user",new_user_path %>
+<%= link_to t('activerecord.models.users.new_user'),new_user_path %>

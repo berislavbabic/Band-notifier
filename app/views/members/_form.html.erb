@@ -1,16 +1,16 @@
 <%= form_for @member do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :first_name %><br />
+    <%= t('activerecord.models.members.first_name') %><br />
     <%= f.text_field :first_name %>
   </p>
   <p>
-    <%= f.label :last_name %><br />
+    <%= t('activerecord.models.members.last_name') %><br />
     <%= f.text_field :last_name %>
   </p>
   <p>
-    <%= f.label :email %><br />
+    <%= t('common.email') %><br />
     <%= f.text_field :email %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit t('common.submit') %></p>
 <% end %>

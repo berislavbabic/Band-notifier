@@ -1,20 +1,20 @@
-<% title "Member" %>
+<% title t('activerecord.models.members.singular') %>
 
 <p>
-  <strong>First Name:</strong>
+  <strong><%= t('activerecord.models.members.first_name') %>:</strong>
   <%= @member.first_name %>
 </p>
 <p>
-  <strong>Last Name:</strong>
+  <strong><%= t('activerecord.models.members.last_name') %>:</strong>
   <%= @member.last_name %>
 </p>
 <p>
-  <strong>Email:</strong>
+  <strong><%= t('common.email') %>:</strong>
   <%= @member.email %>
 </p>
 
 <p>
-  <%= link_to "Uredi", edit_member_path(@member) %> |
-  <%= link_to "Obriši", @member, :confirm => 'Jeste li sigurni?', :method => :delete %> |
-  <%= link_to "Popis članova", members_path %>
+  <%= link_to t('common.edit'), edit_member_path(@member) %> |
+  <%= link_to t('common.delete'), @member, :confirm => t('common.confirmation'), :method => :delete %> |
+  <%= link_to t('activerecord.models.members.list'), members_path %>
 </p>

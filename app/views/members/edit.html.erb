@@ -1,8 +1,8 @@
-<% title "Uredi člana" %>
+<% title t('activerecord.models.members.edit_member') %>
 
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Detalji", @member %> |
-  <%= link_to "Vidi sve", members_path %>
+  <%= link_to t('common.details'), @member %> |
+  <%= link_to t('common.view_all'), members_path %>
 </p>
