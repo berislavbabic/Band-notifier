@@ -7,6 +7,8 @@ git clone git://github.com/babinho/Band-notifier.git
 cd Band-notifier
 bundle install
 rake db:migrate
+# create admin user for the application
+rake app:setup 
 Set the configuration values for your mail in config/initializers/setup_mail.rb
 rails s
 
