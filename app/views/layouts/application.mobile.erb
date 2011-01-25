@@ -11,7 +11,7 @@
     <div class="current">
       <%- if show_title? -%>
       <div class="toolbar">
-        <%= link_to t('activerecord.models.events.plural'), nil, :class => "back" unless current_page? upcoming_path %>
+        <%= link_to t('activerecord.models.events.plural'), upcoming_path, :class => "back" unless current_page? upcoming_path %>
         <h1><%=h yield(:title) %></h1>
         <%= yield(:toolbar) %>
       </div>
