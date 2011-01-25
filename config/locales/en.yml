@@ -58,4 +58,21 @@ en:
     
   previous: Previous
   next: Next
-      
+  
+  controllers:
+    events: 
+      created: Successfully created event.
+      updated: Successfully udpated event.
+      destroyed: Successfully destroyed event.
+    members:
+      created: Successfully created member.
+      updated: Successfully updated member.
+      destroyed: Successfully destroyed member.
+    users:
+      created: Registration successful.
+      updated: Successfully updated profile.
+      destroyed: Successfully destroyed user.
+      destroy_self: You can not destroy yourself!
+    sessions:
+      login: Successfully logged in.
+      logout: Successfully logged out.

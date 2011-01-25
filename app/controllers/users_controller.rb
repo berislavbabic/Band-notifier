@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-     flash[:notice] = "Registration successful."
+     flash[:notice] = t('controllers.users.created')
       redirect_to root_url
    else
       render :action => 'new'
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated profile."
+      flash[:notice] = t('controllers.users.updated')
       redirect_to root_url
     else
       render :action => 'edit'
@@ -39,10 +39,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user == current_user
-      flash[:alert] = "You can not destroy yourself!"
+      flash[:alert] = t('controllers.users.destroy_self')
     else
       @user.destroy 
-      flash[:notice] = "Successfully destroyed user."
+      flash[:notice] = t('controllers.users.destroyed')
     end
     redirect_to users_path
   end

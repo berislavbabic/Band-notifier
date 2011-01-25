@@ -90,6 +90,7 @@ body.landscape .toolbar> h1 {
 }
 .whiteButton, .grayButton {
     display:block;
+    position:right;
     border-width:0 12px;
     padding:10px;
     text-align:center;

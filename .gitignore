@@ -6,3 +6,4 @@ tmp/**/*
 .redcar
 .idea
 Gemfile.lock
+config/initializers/setup_mail.rb

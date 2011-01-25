@@ -9,7 +9,7 @@ class PublicController < ApplicationController
 private
   def check_mobile
     if mobile_device?
-      redirect_to new_user_session_path
+      redirect_to login_path
     end
   end
 end
