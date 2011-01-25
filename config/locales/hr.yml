@@ -167,3 +167,21 @@ hr:
     
   previous: Prethodni
   next: Slijedeći
+  
+  controllers:
+    events: 
+      created: Uspješno kreirana svirka.
+      updated: Uspješno izmijenjena svirka.
+      destroyed: Uspješno izbrisana svirka.
+    members:
+      created: Uspješno unešen član.
+      updated: Uspješno izmijenjen član.
+      destroyed: Uspješno izbrisan član.
+    users:
+      created: Registracija uspješna.
+      updated: Uspješno izmijenjen profil.
+      destroyed: Uspješno izbrisan korisnik.
+      destroy_self: Ne možete obrisati sami sebe!
+    sessions:
+      login: Prijava uspješna.
+      logout: Odjava uspješna.

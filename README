@@ -10,6 +10,7 @@ rake db:migrate
 # create admin user for the application
 rake app:setup 
 Set the configuration values for your mail in config/initializers/setup_mail.rb
+cp config/initializers/setup_mail.rb.example config/initializers/setup_mail.rb
 rails s
 
 Big thanx to bobfly for adding mobile views.

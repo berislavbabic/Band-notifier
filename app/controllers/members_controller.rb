@@ -15,7 +15,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(params[:member])
     if @member.save
-      flash[:notice] = "Successfully created member."
+      flash[:notice] = t('controllers.members.created')
       redirect_to @member
     else
       render :action => 'new'
@@ -29,7 +29,7 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update_attributes(params[:member])
-      flash[:notice] = "Successfully updated member."
+      flash[:notice] = t('controllers.members.updated')
       redirect_to @member
     else
       render :action => 'edit'
@@ -39,7 +39,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    flash[:notice] = "Successfully destroyed member."
+    flash[:notice] = t('controllers.members.destroyed')
     redirect_to members_path
   end
 end

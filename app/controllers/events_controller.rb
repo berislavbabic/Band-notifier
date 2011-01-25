@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     if @event.save
-      flash[:notice] = "Successfully created event."
+      flash[:notice] = t('controllers.events.created')
       redirect_to @event
     else
       render :action => 'new'
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
-      flash[:notice] = "Successfully updated event."
+      flash[:notice] = t('controllers.events.updated')
       redirect_to @event
     else
       render :action => 'edit'
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:notice] = "Successfully destroyed event."
+    flash[:notice] = t('controllers.events.destroyed')
     redirect_to events_path
   end
   	def mail_notify
