@@ -3,7 +3,6 @@
 </div>
 <body class="landscape">
 <%= form_for :user_session, :url => { :action => "create" } do |f| %>
-  <%= f.error_messages %>
 <ul class="edit rounded">
   <li><%= t('activerecord.models.users.username') %></li>
 <li><%= f.text_field :username %></li><br />

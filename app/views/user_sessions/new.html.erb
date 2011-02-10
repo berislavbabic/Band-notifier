@@ -1,7 +1,6 @@
 <% title t('activerecord.models.user_sessions.login') %>
 
 <% form_for :user_session, @user_session, :url => { :action => "create" } do |f| %>
-  <%= f.error_messages %>
 
   <p>
   <%= t('activerecord.models.users.username') %><br />
