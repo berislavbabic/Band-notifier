@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe PublicHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+#describe PublicHelper do
+#  pending "add some examples to (or delete) #{__FILE__}"
+#end
