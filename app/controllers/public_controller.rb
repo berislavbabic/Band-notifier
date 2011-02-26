@@ -2,6 +2,7 @@ class PublicController < ApplicationController
   before_filter :check_mobile
 
   def index
+    @events = Event.find(:all, :conditions => {:public => true}, :order => 'event_date asc')
   end
   def about
   end

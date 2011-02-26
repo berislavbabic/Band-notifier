@@ -20,5 +20,9 @@
     <%= t('activerecord.models.events.currency') %><br />
     <%= f.text_field :currency %>
   </p>
+  <p>
+    <%= t('activerecord.models.events.public') %><br/>
+    <%= f.check_box :public %>
+  </p>
   <p><%= f.submit t('common.submit') %></p>
 <% end %>

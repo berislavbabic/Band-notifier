@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except => :show
+  before_filter :public_event_filter, :only => :show
   def index
     @events = Event.paginate(:page => params[:page], :order => 'event_date')
   end
@@ -56,4 +57,11 @@ class EventsController < ApplicationController
     	session[:return_to] = nil
     	redirect_to redirect_link
   	end
+private
+  def public_event_filter
+    event = Event.find(params[:id])
+    unless event.public?
+      require_user
+    end
+  end
 end

@@ -2,4 +2,9 @@
 <h3>Aplikacija za kalendarsko praćenje i obavještavanje članova benda o novim svirkama</h3>
 <p>
   Morate biti prijavljeni za pregled podataka
-</p>
+  </p>
+  <div align="right">
+    <% @events.each do |event| %>
+      <%= link_to event.name, event %>
+    <% end %>
+  </div>

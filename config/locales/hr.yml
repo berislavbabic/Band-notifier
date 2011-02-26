@@ -137,6 +137,7 @@ hr:
         title: Naziv
         description: Opis
         price: Cijena
+        public: Javna
         currency: Valuta
         new_event: Nova svirka
         new_events: Nove svirke

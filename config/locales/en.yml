@@ -29,6 +29,7 @@ en:
         title: Title
         description: Description
         price: Price
+        public: Public
         currency: Currency
         new_event: New event
         new_events: Upcoming events

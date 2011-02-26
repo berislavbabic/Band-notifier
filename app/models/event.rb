@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :description, :event_date, :price, :currency
+  attr_accessible :name, :description, :event_date, :price, :currency, :public
   validate :date_created, :on => :create
   validates :name, :presence => true
   validates :description, :presence => true
