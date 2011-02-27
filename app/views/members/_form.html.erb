@@ -1,20 +1,21 @@
-<%= form_for @member, :html => {:class => "form"} do |f| %>
-<div class="group">
-  <%= f.label t('activerecord.models.members.first_name'), :class=>"label" %>
-    <%= f.text_field :first_name, :class=>"text_field" %>
+
+  <div class="group">
+    <%= f.label :first_name, t("activerecord.attributes.member.first_name", :default => "First name"), :class => :label %>
+    <%= f.text_field :first_name, :class => 'text_field' %>
+  </div>
+
+  <div class="group">
+    <%= f.label :last_name, t("activerecord.attributes.member.last_name", :default => "Last name"), :class => :label %>
+    <%= f.text_field :last_name, :class => 'text_field' %>
+  </div>
+
+  <div class="group">
+    <%= f.label :email, t("activerecord.attributes.member.email", :default => "Email"), :class => :label %>
+    <%= f.text_field :email, :class => 'text_field' %>
+  </div>
+<div class="group navform wat-cf">
+  <button type="submit" class="button">
+    <%= image_tag "icons/tick.png", :class => "button" %> Save
+  </button>
+  <%= link_to(image_tag("icons/cross.png") + " Cancel", members_path, :class =>"button") %>
 </div>
-  <div class="group">
-    <%= f.label t('activerecord.models.members.last_name'), :class=>"label" %><br />
-    <%= f.text_field :last_name, :class => "text_field" %>
-  </div>
-  <div class="group">
-    <%= f.label t('common.email'), :class => "label" %><br />
-    <%= f.text_field :email, :class => "text_field" %>
-  </div>
-  <div class="group navform wat-cf">
-    <button type="submit" class="button">
-      <%= image_tag "icons/tick.png", :class => "button" %> Save
-   </button>
-    <%= link_to(image_tag("icons/cross.png") + " Cancel", members_path, :class =>"button") %>
-  </div>
-<% end %>

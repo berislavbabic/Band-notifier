@@ -1,20 +1,34 @@
-<% title t('activerecord.models.members.singular') %>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", members_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_member_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", member_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.member.first_name", :default => t("activerecord.labels.first_name", :default => "First name")) %>:</b>
+          <%= @member.first_name %>
+        </p>
 
-<p>
-  <strong><%= t('activerecord.models.members.first_name') %>:</strong>
-  <%= @member.first_name %>
-</p>
-<p>
-  <strong><%= t('activerecord.models.members.last_name') %>:</strong>
-  <%= @member.last_name %>
-</p>
-<p>
-  <strong><%= t('common.email') %>:</strong>
-  <%= @member.email %>
-</p>
+        <p>
+          <b><%= t("activerecord.attributes.member.last_name", :default => t("activerecord.labels.last_name", :default => "Last name")) %>:</b>
+          <%= @member.last_name %>
+        </p>
 
-<p>
-  <%= link_to t('common.edit'), edit_member_path(@member) %> |
-  <%= link_to t('common.delete'), @member, :confirm => t('common.confirmation'), :method => :delete %> |
-  <%= link_to t('activerecord.models.members.list'), members_path %>
-</p>
+        <p>
+          <b><%= t("activerecord.attributes.member.email", :default => t("activerecord.labels.email", :default => "Email")) %>:</b>
+          <%= @member.email %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_member_path(@member), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), member_path(@member), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

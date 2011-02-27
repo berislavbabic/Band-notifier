@@ -1,28 +1,49 @@
-<% title t('activerecord.models.events.singular') %>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", events_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_event_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", event_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.event.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <%= @event.name %>
+        </p>
 
-<p>
-  <strong><%= t('activerecord.models.events.title') %>:</strong>
-  <%= @event.name %>
-</p>
-<p>
-  <strong><%= t('activerecord.models.events.description') %>:</strong>
-  <%= @event.description %>
-</p>
-<p>
-  <strong><%= t('common.date') %>:</strong>
-  <%= @event.event_date %>
-</p>
-<p>
-  <strong><%= t('activerecord.models.events.price') %>:</strong>
-  <%= @event.price %>
-</p>
-<p>
-  <strong><%= t('activerecord.models.events.price') %>:</strong>
-  <%= @event.currency %>
-</p>
+        <p>
+          <b><%= t("activerecord.attributes.event.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
+          <%= @event.description %>
+        </p>
 
-<p>
-  <%= link_to t('common.edit'), edit_event_path(@event) %> |
-  <%= link_to t('common.delete'), @event, :confirm => t('common.confirmation'), :method => :delete %> |
-  <%= link_to t('activerecord.models.events.list'), events_path %>
-</p>
+        <p>
+          <b><%= t("activerecord.attributes.event.event_date", :default => t("activerecord.labels.event_date", :default => "Event date")) %>:</b>
+          <%= @event.event_date %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.event.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</b>
+          <%= @event.price %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.event.currency", :default => t("activerecord.labels.currency", :default => "Currency")) %>:</b>
+          <%= @event.currency %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.event.public", :default => t("activerecord.labels.public", :default => "Public")) %>:</b>
+          <%= @event.public %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_event_path(@event), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), event_path(@event), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

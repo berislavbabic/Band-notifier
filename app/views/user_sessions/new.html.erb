@@ -1,16 +1,17 @@
-<% title t('activerecord.models.user_sessions.login') %>
+  <h1>Band Notifier</h1>
 <div class="block" id="block-login">
-  <h2>Band Notifier</h2>
+  <h2><%= t('activerecord.models.user_sessions.login') %></h2>
 <div class="content login">
     <%= form_for :user_session, @user_session, :url => { :action => "create" }, 
       :html => {:class => "form login"} do |f| %>
-        <div class="flash">
-          <% flash.each do |type, message| -%>
-            <div class="message <%= type %>">
+        <% if @user_session.errors.any? -%>
+          <div class="flash">
+            <div class="message error">
+            <% @user_session.errors.full_messages.each do |message| -%>
               <p><%= message %></p>
-            </div>
-          <% end -%>
-        </div>
+            <% end -%>
+          </div>
+        <% end -%>
   <div class="group wat-cf">
     <div class="left">
       <%= f.label t('activerecord.models.users.username'), :class => "label right" %>
