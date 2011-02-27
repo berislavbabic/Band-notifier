@@ -9,6 +9,7 @@ gem 'authlogic'
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'web-app-theme','>=0.6.2'
   gem "mocha"
   gem 'nifty-generators'
   gem 'faker'
