@@ -10,6 +10,7 @@
   <div id="container">
     <div id="header">
       <h1><a href="/">Band Notifier</a></h1>
+      <% if current_user -%>
       <div id="user-navigation">
         <ul class="wat-cf">
           <li><%= link_to t("web-app-theme.profile", :default => "Profile"), edit_user_path(current_user.id) %></li>
@@ -17,6 +18,7 @@
           <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
         </ul>
       </div>
+    <% end %>
       <div id="main-navigation">
         <ul class="wat-cf">
           <% if current_user -%>
