@@ -38,7 +38,7 @@ en:
       user_sessions:
         login: Login
         logout: Logout
-        remember_me: Remember me
+        remember_me: Remember
         
   common:
     new: New

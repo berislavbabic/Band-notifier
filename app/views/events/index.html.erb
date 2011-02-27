@@ -1,16 +1,15 @@
-<% title t('activerecord.models.events.plural') %>
-
-<table>
+<div class="block">
+  <div class="content">
+<h2 class="title"><%= t('activerecord.models.events.plural') %></h2>
+<div class ="inner">
+<table class="table">
   <tr>
-    <th><%= t('activerecord.models.events.title') %></th>
+    <th class="first"><%= t('activerecord.models.events.title') %></th>
     <th><%= t('activerecord.models.events.description') %></th>
     <th><%= t('common.date') %></th>
     <th><%= t('activerecord.models.events.price') %></th>
     <th><%= t('activerecord.models.events.currency') %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="last"></th>
   </tr>
   <% for event in @events %>
     <tr>
@@ -19,12 +18,22 @@
       <td><%= event.event_date %></td>
       <td><%= event.price %></td>
       <td><%= event.currency %></td>
-      <td><%= link_to t('common.details'), event %></td>
-      <td><%= link_to t('common.edit'), edit_event_path(event) %></td>
-      <td><%= link_to t('common.delete'), event, :confirm => t('common.confirmation'), :method => :delete %></td>
-      <td><%= link_to t('common.send_mail'), events_notify_path(event), :confirm => t('common.confirmation') %></td>
+      <td class="last"><%= link_to t('common.details'), event %> | 
+      <%= link_to t('common.edit'), edit_event_path(event) %> | 
+      <%= link_to t('common.delete'), event, :confirm => t('common.confirmation'), :method => :delete %> | 
+      <%= link_to t('common.send_mail'), events_notify_path(event), :confirm => t('common.confirmation') %>
+    </td>
     </tr>
   <% end %>
 </table>
-<%= will_paginate @events, :previous_label => t("previous"), :next_label => t("next") %>
-<p><%= link_to t('activerecord.models.events.new_event'), new_event_path %></p>
+<div class="actions-bar wat-cf">
+<div class="actions">
+  <%= button_to t('activerecord.models.events.new_event'), new_event_path %>
+</div>
+<div class="pagination">
+  <%= will_paginate @events, :previous_label => t("previous"), :next_label => t("next") %>
+</div>
+</div>
+</div>
+</div>
+</div>

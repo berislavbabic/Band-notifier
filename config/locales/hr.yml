@@ -146,7 +146,7 @@ hr:
       user_sessions:
         login: Prijava
         logout: Odjava
-        remember_me: Zapamti me
+        remember_me: Zapamti
         
   common:
     new: Novi
