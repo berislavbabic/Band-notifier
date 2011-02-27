@@ -31,12 +31,19 @@ module BandNotifier
      config.i18n.default_locale = :en
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails jquery-ui.min application)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
     
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance| 
+      if html_tag =~ /<label/
+        %|<div class="fieldWithErrors">#{html_tag} <span class="error">#{[instance.error_message].join(', ')}</span></div>|.html_safe
+      else
+        html_tag
+      end
+    end
   end
 end

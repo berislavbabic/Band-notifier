@@ -1,5 +1,3 @@
-<div class="block">
-  <div class="content">
 <h2 class="title"><%= t('activerecord.models.events.plural') %></h2>
 <div class ="inner">
 <table class="table">
@@ -30,12 +28,10 @@
 </table>
 <div class="actions-bar wat-cf">
 <div class="actions">
-  <%= button_to t('activerecord.models.events.new_event'), new_event_path, :method => :get %>
+  <%= link_to t('activerecord.models.events.new_event'), new_event_path, :class=>"button" %>
 </div>
 <div class="pagination">
   <%= will_paginate @events, :previous_label => t("previous"), :next_label => t("next") %>
-</div>
-</div>
 </div>
 </div>
 </div>

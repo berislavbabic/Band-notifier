@@ -1,9 +1,16 @@
 <% title t('activerecord.models.user_sessions.login') %>
 <div class="block" id="block-login">
   <h2>Band Notifier</h2>
-  <div class="content login">
+<div class="content login">
     <%= form_for :user_session, @user_session, :url => { :action => "create" }, 
       :html => {:class => "form login"} do |f| %>
+        <div class="flash">
+          <% flash.each do |type, message| -%>
+            <div class="message <%= type %>">
+              <p><%= message %></p>
+            </div>
+          <% end -%>
+        </div>
   <div class="group wat-cf">
     <div class="left">
       <%= f.label t('activerecord.models.users.username'), :class => "label right" %>

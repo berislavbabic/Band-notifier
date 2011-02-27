@@ -1,16 +1,16 @@
-<div class="block">
-  <div class="content">
 <h2 class="title"><%= t('activerecord.models.members.plural') %></h2>
 <div class ="inner">
 <table class="table">
   <tr>
-  <th class="first"><%= t('activerecord.models.members.first_name') %></th>
+    <th class="first">ID</th>
+    <th><%= t('activerecord.models.members.first_name') %></th>
     <th><%= t('activerecord.models.members.last_name') %></th>
     <th><%= t('common.email') %></th>
     <th class="last"></th>
   </tr>
   <% for member in @members %>
     <tr>
+      <td><%= member.id %></td>
       <td><%= member.first_name %></td>
       <td><%= member.last_name %></td>
       <td><%= member.email %></td>
@@ -22,9 +22,7 @@
 </table>
 <div class="actions-bar wat-cf">
 <div class="actions">
-  <%= button_to t('activerecord.models.members.new_member'), new_member_path, :method=>:get %>
-</div>
-</div>
+  <%= link_to t('activerecord.models.members.new_member'), new_member_path, :class => "button" %>
 </div>
 </div>
 </div>

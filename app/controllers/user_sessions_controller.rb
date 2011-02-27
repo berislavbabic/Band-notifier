@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = t('controllers.sessions.login')
       redirect_to upcoming_path
     else
-      render :action => 'new'
+      render :action => 'new', :layout => 'sign'
     end
   end
 
