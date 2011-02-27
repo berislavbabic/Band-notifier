@@ -1,24 +1,30 @@
-<% title t('activerecord.models.members.plural') %>
-
-<table>
+<div class="block">
+  <div class="content">
+<h2 class="title"><%= t('activerecord.models.members.plural') %></h2>
+<div class ="inner">
+<table class="table">
   <tr>
-  <th><%= t('activerecord.models.members.first_name') %></th>
+  <th class="first"><%= t('activerecord.models.members.first_name') %></th>
     <th><%= t('activerecord.models.members.last_name') %></th>
     <th><%= t('common.email') %></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="last"></th>
   </tr>
   <% for member in @members %>
     <tr>
       <td><%= member.first_name %></td>
       <td><%= member.last_name %></td>
       <td><%= member.email %></td>
-      <td><%= link_to t('common.details'), member %></td>
-      <td><%= link_to t('common.edit'), edit_member_path(member) %></td>
-      <td><%= link_to t('common.delete'), member, :confirm => t('common.confirmation'), :method => :delete %></td>
+      <td><%= link_to t('common.details'), member %> | 
+      <%= link_to t('common.edit'), edit_member_path(member) %> | 
+      <%= link_to t('common.delete'), member, :confirm => t('common.confirmation'), :method => :delete %></td>
     </tr>
   <% end %>
 </table>
-
-<p><%= link_to t('activerecord.models.members.new_member'), new_member_path %></p>
+<div class="actions-bar wat-cf">
+<div class="actions">
+  <%= button_to t('activerecord.models.members.new_member'), new_member_path, :method=>:get %>
+</div>
+</div>
+</div>
+</div>
+</div>

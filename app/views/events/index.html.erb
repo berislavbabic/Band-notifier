@@ -4,7 +4,8 @@
 <div class ="inner">
 <table class="table">
   <tr>
-    <th class="first"><%= t('activerecord.models.events.title') %></th>
+    <th class="first">ID</th>
+    <th><%= t('activerecord.models.events.title') %></th>
     <th><%= t('activerecord.models.events.description') %></th>
     <th><%= t('common.date') %></th>
     <th><%= t('activerecord.models.events.price') %></th>
@@ -13,6 +14,7 @@
   </tr>
   <% for event in @events %>
     <tr>
+      <td><%= event.id %></td>
       <td><%= event.name %></td>
       <td><%= event.description %></td>
       <td><%= event.event_date %></td>
@@ -28,7 +30,7 @@
 </table>
 <div class="actions-bar wat-cf">
 <div class="actions">
-  <%= button_to t('activerecord.models.events.new_event'), new_event_path %>
+  <%= button_to t('activerecord.models.events.new_event'), new_event_path, :method => :get %>
 </div>
 <div class="pagination">
   <%= will_paginate @events, :previous_label => t("previous"), :next_label => t("next") %>
