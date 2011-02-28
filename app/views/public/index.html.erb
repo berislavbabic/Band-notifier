@@ -3,8 +3,4 @@
 <p>
   Morate biti prijavljeni za pregled podataka
   </p>
-  <div align="right">
-    <% @events.each do |event| %>
-      <%= link_to event.name, event %>
-    <% end %>
-  </div>
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

@@ -1,0 +1,8 @@
+<div class="block notice">
+  <h3>Upcoming Events</h3>
+  <ul class="navigation">
+    <% @events.each do |event| %>
+      <li><%= link_to event.name, event %></li>
+    <% end %>
+  </ul>
+</div>

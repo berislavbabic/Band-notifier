@@ -22,6 +22,6 @@ group :cucumber do
     gem 'database_cleaner'
     gem 'cucumber-rails'
     gem 'cucumber'
-    gem 'spork', '0.9.0.rc3'
+    gem 'spork', '0.9.0.rc4'
     gem 'launchy'
 end
