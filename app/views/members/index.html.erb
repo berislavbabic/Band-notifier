@@ -16,7 +16,7 @@
       <td><%= member.email %></td>
       <td><%= link_to t('common.details'), member %></td>
       <td><%= link_to t('common.edit'), edit_member_path(member) %></td>
-      <td><%= link_to t('common.delete'), member, :confirm => t('common.confirmation'), :method => :delete %></td>
+      <td><%= link_to t('common.delete'), member, :method => :delete, :confirm => t('common.confirmation') %></td>
     </tr>
   <% end %>
 </table>

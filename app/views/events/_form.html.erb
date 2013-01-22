@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= t('common.date') %><br />
-    <%= f.date_select :event_date %>
+    <%= f.date_select :event_date, order: [:day,:month,:year] %>
   </p>
   <p>
     <%= t('activerecord.models.events.price') %><br />
